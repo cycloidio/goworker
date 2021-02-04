@@ -91,6 +91,13 @@ import (
 	"strings"
 )
 
+// Namespace returns the namespace flag for goworker. You
+// can use this with the GetConn and PutConn functions to
+// operate on the same namespace that goworker uses.
+func Namespace() string {
+	return workerSettings.Namespace
+}
+
 func init() {
 	flag.StringVar(&workerSettings.QueuesString, "queues", "", "a comma-separated list of Resque queues")
 
